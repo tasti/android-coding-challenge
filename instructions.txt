@@ -17,7 +17,7 @@ Relative
 The relative command, changes the components with a relative offset.
 The message has this structure:
 
-8-bit constant                    -- 0x01 ("relative" command)
+8-bit constant 	                  -- 0x01 ("relative" command)
 16-bit signed int, network endian -- R offset
 16-bit signed int, network endian -- G offset
 16-bit signed int, network endian -- B offset
@@ -31,7 +31,7 @@ Absolute
 The absolute command, changes the components to the specified absolute values.
 The message has this structure:
 
-8-bit constant     -- 0x02 ("absolute" command)
+8-bit constant 	   -- 0x02 ("absolute" command)
 8-bit unsigned int -- absolute R value
 8-bit unsigned int -- absolute G value
 8-bit unsigned int -- absolute B value
