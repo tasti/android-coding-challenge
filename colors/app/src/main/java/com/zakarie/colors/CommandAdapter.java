@@ -11,6 +11,7 @@ import android.widget.TextView;
 import java.util.List;
 
 public class CommandAdapter extends ArrayAdapter<Command> {
+
     private Context context;
     private int layout;
 
@@ -87,6 +88,7 @@ public class CommandAdapter extends ArrayAdapter<Command> {
             colorSingleton.revert((RelativeCommand) command);
         } else if (command instanceof AbsoluteCommand) {
             // Absolute commands can only be deselected by selecting another absolute command
+            // Hence, this command is reselected
             command.toggleSelected();
 
             colorSingleton.revert((AbsoluteCommand) command);
@@ -114,4 +116,5 @@ public class CommandAdapter extends ArrayAdapter<Command> {
 
         notifyDataSetChanged();
     }
+
 }

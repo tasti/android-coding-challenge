@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.TextView;
 
 public class ColorSingleton {
+
     private static ColorSingleton instance = null;
 
     public static final int COLOR_DEFAULT = 127;
@@ -30,7 +31,7 @@ public class ColorSingleton {
         instance.initialize(colorBox, redLabel, greenLabel, blueLabel);
     }
 
-    // Allows for updating the updating the views when ColorsActivity is recreated
+    // Allows for updating the views when ColorsActivity is recreated and instance persisted
     private void initialize(View colorBox, TextView redLabel, TextView greenLabel, TextView blueLabel) {
         this.r = COLOR_DEFAULT;
         this.g = COLOR_DEFAULT;
@@ -44,6 +45,7 @@ public class ColorSingleton {
         displayUpdate();
     }
 
+    // PRE: createInstance(...) must be called before this method
     public static ColorSingleton getInstance() {
         if (instance == null) {
             throw new RuntimeException("getInstance() called before createInstance(...)");
@@ -91,4 +93,5 @@ public class ColorSingleton {
     public synchronized void revert(AbsoluteCommand ac) {
         // No changes need to be done to the color
     }
+
 }

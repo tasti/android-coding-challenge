@@ -9,6 +9,7 @@ public class AbsoluteCommand extends Command {
     }
 
     public int getX(byte color) {
+        // The color should be in the range of [0, 255]
         if (color < 0) {
             return color + 256;
         }
@@ -17,7 +18,7 @@ public class AbsoluteCommand extends Command {
     }
 
     public String getCommandType() {
-        return this.type;
+        return type;
     }
 
 }

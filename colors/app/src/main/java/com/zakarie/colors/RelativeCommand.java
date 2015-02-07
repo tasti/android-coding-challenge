@@ -14,7 +14,7 @@ public class RelativeCommand extends Command {
     }
 
     public String getCommandType() {
-        return this.type;
+        return type;
     }
 
 }

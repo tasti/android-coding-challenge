@@ -2,12 +2,11 @@
 <resources>
 
     <string name="app_name">Colors</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-    <string name="title_activity_colors">ColorsActivity</string>
+    <string name="title_activity_colors">Colors</string>
 
     <string name="address">Address</string>
     <string name="port">Port</string>
     <string name="start">Start</string>
+    <string name="tasti_zakarie">Tasti Zakarie</string>
 
 </resources>

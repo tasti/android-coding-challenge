@@ -30,4 +30,11 @@
         android:text="@string/start"
         android:onClick="startColors" />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="bottom"
+        android:text="@string/tasti_zakarie"/>
+
 </LinearLayout>

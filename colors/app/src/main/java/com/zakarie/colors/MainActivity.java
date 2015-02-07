@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class MainActivity extends Activity {
+
     public final static String EXTRA_ADDRESS = "com.zakarie.colors.ADDRESS";
     public final static String EXTRA_PORT = "com.zakarie.colors.PORT";
 
@@ -31,7 +32,7 @@ public class MainActivity extends Activity {
     }
 
     private boolean isAddressValid(String address) {
-        return !address.isEmpty();
+        return !address.isEmpty() && !address.contains(" ");
     }
 
     private boolean isPortValid(String port) {
@@ -58,4 +59,5 @@ public class MainActivity extends Activity {
         intent.putExtra(EXTRA_PORT, Integer.parseInt(port));
         startActivity(intent);
     }
+
 }
