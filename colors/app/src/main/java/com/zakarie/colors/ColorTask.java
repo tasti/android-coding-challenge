@@ -57,13 +57,14 @@ public class ColorTask extends AsyncTask<Void, Command, String> {
 
             while (inputStream.read(buffer) != -1) {
                 for (Byte b : buffer) {
-                    if (isCancelled()) {
+                    if (isCancelled()) { // Exit as soon as the task is cancelled
                         socket.close();
                         return null;
                     }
 
                     switch (state) {
                         case STATE_NONE:
+                            // A valid state was read, update to that state for the next input
                             if (b == 1) {
                                 state = STATE_RELATIVE;
                             } else if (b == 2) {
@@ -74,6 +75,7 @@ public class ColorTask extends AsyncTask<Void, Command, String> {
                         case STATE_RELATIVE:
                             relative[relativeLength++] = b;
 
+                            // Received the whole command, update the UI and reset the state
                             if (relativeLength == RELATIVE_MAX) {
                                 RelativeCommand rc = new RelativeCommand(relative);
                                 publishProgress(rc);
@@ -86,6 +88,7 @@ public class ColorTask extends AsyncTask<Void, Command, String> {
                         case STATE_ABSOLUTE:
                             absolute[absoluteLength++] = b;
 
+                            // Received the whole command, update the UI and reset the state
                             if (absoluteLength == ABSOLUTE_MAX) {
                                 AbsoluteCommand ac = new AbsoluteCommand(absolute);
                                 publishProgress(ac);

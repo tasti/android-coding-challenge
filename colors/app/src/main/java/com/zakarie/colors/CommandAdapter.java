@@ -29,9 +29,7 @@ public class CommandAdapter extends ArrayAdapter<Command> {
 
         // Insert the default value
         AbsoluteCommand defaultAC = new AbsoluteCommand(new byte[]{ColorSingleton.COLOR_DEFAULT, ColorSingleton.COLOR_DEFAULT, ColorSingleton.COLOR_DEFAULT});
-        commands.add(defaultAC);
-
-        notifyDataSetChanged();
+        add(defaultAC);
     }
 
     @Override

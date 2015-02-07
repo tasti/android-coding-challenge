@@ -55,13 +55,14 @@ public class ColorSingleton {
     }
 
     private void displayUpdate() {
-        colorBox.setBackgroundColor(Color.rgb(this.r, this.g, this.b));
+        this.colorBox.setBackgroundColor(Color.rgb(this.r, this.g, this.b));
 
-        redLabel.setText(Integer.toString(this.r));
-        greenLabel.setText(Integer.toString(this.g));
-        blueLabel.setText(Integer.toString(this.b));
+        this.redLabel.setText(Integer.toString(this.r));
+        this.greenLabel.setText(Integer.toString(this.g));
+        this.blueLabel.setText(Integer.toString(this.b));
     }
 
+    // RETURNS: The positive equivalent to n % m
     private static int posmod(int n, int m) {
         return ((n % m) + m) % m;
     }

@@ -9,7 +9,7 @@ public class RelativeCommand extends Command {
         super(bytes[1], bytes[3], bytes[5]);
     }
 
-    public int getX(byte color) {
+    protected int getX(byte color) {
         return color;
     }
 

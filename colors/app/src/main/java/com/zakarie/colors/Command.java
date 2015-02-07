@@ -14,7 +14,7 @@ public abstract class Command {
         this.B = b;
     }
 
-    public abstract int getX(byte color);
+    protected abstract int getX(byte color);
 
     public int getR() {
         return getX(this.R);

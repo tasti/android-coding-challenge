@@ -31,11 +31,11 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    private boolean isAddressValid(String address) {
+    private static boolean isAddressValid(String address) {
         return !address.isEmpty() && !address.contains(" ");
     }
 
-    private boolean isPortValid(String port) {
+    private static boolean isPortValid(String port) {
         return !port.isEmpty();
     }
 

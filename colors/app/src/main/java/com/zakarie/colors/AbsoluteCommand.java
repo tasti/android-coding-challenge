@@ -8,7 +8,7 @@ public class AbsoluteCommand extends Command {
         super(bytes[0], bytes[1], bytes[2]);
     }
 
-    public int getX(byte color) {
+    protected int getX(byte color) {
         // The color should be in the range of [0, 255]
         if (color < 0) {
             return color + 256;
