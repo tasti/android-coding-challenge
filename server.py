@@ -6,7 +6,7 @@ import struct
 import sys
 import time
 
-PORT = 1236
+PORT = 1234
 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 s.bind(('', PORT))
